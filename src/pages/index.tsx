@@ -6,7 +6,7 @@ const Index = () => {
   const location = useLocation();
   console.log(location);
   return (
-    <div className="relative flex size-full min-h-screen flex-col bg-[#111a22] dark group/design-root overflow-x-hidden">
+    <div className="relative flex size-full min-h-screen flex-col bg-[#111a22] dark group/design-root overflow-x-hidden border">
       <Header />
       <Outlet />
       {!location.pathname.startsWith("/dashboard") && <Footer />}

@@ -1,5 +1,8 @@
 import { Routes, Route } from "react-router";
 import HomePage from "./pages/home";
+import ExplorePage from "./pages/explore";
+import HirePage from "./pages/hire";
+import PricingPage from "./pages/pricing";
 import SigninPage from "./pages/auth";
 import SignupPage from "./pages/auth/signup";
 import ResetPasswordPage from "./pages/auth/reset";
@@ -11,6 +14,9 @@ function Router() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
+        <Route path="explore" element={<ExplorePage />} />
+        <Route path="hire" element={<HirePage />} />
+        <Route path="pricing" element={<PricingPage />} />
         {/* <Route path="guest" element={<Guest />} />
         <Route path="post" element={<Post />} /> */}
         <Route path="auth">
