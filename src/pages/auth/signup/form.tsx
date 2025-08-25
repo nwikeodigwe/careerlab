@@ -39,7 +39,7 @@ export const Form = () => {
       </fieldset>
       <fieldset className="flex py-3">
         <button className="flex min-w-[84px] max-w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg px-4 flex-1 bg-[#1773cf] text-white text-sm font-bold leading-normal tracking-[0.015em] h-14">
-          <span className="truncate">Sign In</span>
+          <span className="truncate">Sign Up</span>
         </button>
       </fieldset>
     </form>

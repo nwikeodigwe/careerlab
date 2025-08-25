@@ -1,13 +1,14 @@
 import { Routes, Route } from "react-router";
-import HomePage from "./pages/home";
-import ExplorePage from "./pages/explore";
-import HirePage from "./pages/hire";
-import PricingPage from "./pages/pricing";
-import SigninPage from "./pages/auth";
-import SignupPage from "./pages/auth/signup";
-import ResetPasswordPage from "./pages/auth/reset";
-import AssistantPage from "./pages/dashboard";
-import Layout from "./pages";
+import HomePage from "@/pages/home";
+import ExplorePage from "@/pages/explore";
+import HirePage from "@/pages/hire";
+import PricingPage from "@/pages/pricing";
+import SigninPage from "@/pages/auth";
+import SignupPage from "@/pages/auth/signup";
+import Callback from "@/pages/auth/callback";
+import ResetPasswordPage from "@/pages/auth/reset";
+import AssistantPage from "@/pages/dashboard";
+import Layout from "@/pages";
 
 function Router() {
   return (
@@ -23,6 +24,7 @@ function Router() {
           <Route index element={<SigninPage />} />
           <Route path="signup" element={<SignupPage />} />
           <Route path="reset-password" element={<ResetPasswordPage />} />
+          <Route path="callback" element={<Callback />} />
           {/* <Route path="callback" element={<AuthCallback />} />
         <Route path="signout" element={<Signout />} /> */}
         </Route>
