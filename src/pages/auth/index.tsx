@@ -1,5 +1,7 @@
 import { Link } from "react-router";
 import { Form } from "./form";
+import { Google } from "./google";
+import { LinkedIn } from "./linkedin";
 
 const Index = () => {
   return (
@@ -20,12 +22,8 @@ const Index = () => {
           <span className="w-full h-[1px] bg-gray-500"></span>
         </div>
         <div className="flex flex-col gap-3 mt-4">
-          <button className="text-blue-500 border-1 border-blue-500 rounded-lg h-14">
-            Sign in with Google
-          </button>
-          <button className="text-blue-500 border-1 border-blue-500 rounded-lg h-14">
-            Sign in with LinkedIn
-          </button>
+          <Google text="Sign in" />
+          <LinkedIn text="Sign in" />
         </div>
       </div>
     </div>

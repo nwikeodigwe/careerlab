@@ -9,7 +9,9 @@ export const Header = () => {
       >
         PNC
       </Link>
-      <h2 className="text-2xl">Loan Support Analyst Sr - Midland</h2>
+      <h2 className="text-2xl font-semibold">
+        Loan Support Analyst Sr - Midland
+      </h2>
       <p className="text-sm font-light text-gray-500">
         1 week ago • Flexible / Remote
       </p>
