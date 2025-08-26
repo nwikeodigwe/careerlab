@@ -1,6 +1,6 @@
 import { useSignupMutation } from "@/features/services/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { signupSchema, type Signup } from "@/schema/auth";
+import { signupSchema, type Signup } from "@/schema/signup";
 import { useForm } from "react-hook-form";
 import clsx from "clsx";
 import { useState } from "react";
@@ -45,7 +45,7 @@ export const Form = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       {error && (
-        <div className="text-red-500 bg-red-500/5 p-5 border border-red-500 text-xs">
+        <div className="text-red-500 bg-red-500/5 p-5 border border-red-500 text-xs rounded-sm">
           {error}
         </div>
       )}
