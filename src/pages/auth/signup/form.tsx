@@ -8,8 +8,10 @@ import { set_auth } from "@/features/slices/auth";
 import { useCookies } from "react-cookie";
 import { decodeToken } from "react-jwt";
 import { useNavigate } from "react-router";
+import { useDispatch } from "react-redux";
 
 export const Form = () => {
+  const dispatch = useDispatch();
   const [error, setError] = useState<string | null>(null);
   const [signup, { isLoading }] = useSignupMutation();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -32,7 +34,9 @@ export const Form = () => {
         data: { id: string; email: string };
       };
       console.log(auth);
-      set_auth({ id: auth.id, email: auth.email });
+      dispatch(
+        set_auth({ id: auth.id, email: auth.email, isAuthenticated: true })
+      );
       setCookie("token", response.token);
       reset();
       navigate("/dashboard");

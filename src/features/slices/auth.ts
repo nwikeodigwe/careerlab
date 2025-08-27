@@ -3,11 +3,13 @@ import { createSlice } from "@reduxjs/toolkit";
 export type authStateType = {
   id: string;
   email: string;
+  isAuthenticated: boolean;
 };
 
 const initialState: authStateType = {
   id: "",
   email: "",
+  isAuthenticated: false,
 };
 
 const authSlice = createSlice({

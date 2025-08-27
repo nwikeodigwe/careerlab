@@ -5,6 +5,7 @@ import HirePage from "@/pages/hire";
 import PricingPage from "@/pages/pricing";
 import SigninPage from "@/pages/auth";
 import SignupPage from "@/pages/auth/signup";
+import Logout from "./pages/auth/logout";
 import Callback from "@/pages/auth/callback";
 import ResetPasswordPage from "@/pages/auth/reset";
 import AssistantPage from "@/pages/dashboard";
@@ -25,6 +26,7 @@ function Router() {
           <Route path="signup" element={<SignupPage />} />
           <Route path="reset-password" element={<ResetPasswordPage />} />
           <Route path="callback" element={<Callback />} />
+          <Route path="logout" element={<Logout />} />
           {/* <Route path="callback" element={<AuthCallback />} />
         <Route path="signout" element={<Signout />} /> */}
         </Route>

@@ -9,8 +9,11 @@ import { decodeToken } from "react-jwt";
 import { useNavigate } from "react-router";
 import { Link } from "react-router";
 import clsx from "clsx";
+import { is } from "zod/locales";
+import { useDispatch } from "react-redux";
 
 export const Form = () => {
+  const dispatch = useDispatch();
   const [error, setError] = useState<string | null>(null);
   const [signin, { isLoading }] = useSigninMutation();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -34,7 +37,9 @@ export const Form = () => {
         data: { id: string; email: string };
       };
       console.log(auth);
-      set_auth({ id: auth.id, email: auth.email });
+      dispatch(
+        set_auth({ id: auth.id, email: auth.email, isAuthenticated: true })
+      );
       setCookie("token", response.token);
       reset();
       navigate("/dashboard");

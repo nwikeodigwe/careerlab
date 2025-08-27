@@ -1,7 +1,14 @@
 import { FaPlus } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import { Link } from "react-router";
+import { User } from "./user";
+import type { RootState } from "../store";
 
-const Header = () => {
+const Index = () => {
+  const isAuthenticated = useSelector(
+    (state: RootState) => state.auth.isAuthenticated
+  );
+  console.log("isAuthenticated:", isAuthenticated);
   return (
     <header className="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#243647] px-10 py-3">
       <div className="flex items-center gap-4 text-white">
@@ -43,6 +50,14 @@ const Header = () => {
           >
             Pricing
           </Link>
+          {isAuthenticated && (
+            <Link
+              to="/dashboard/saved"
+              className="text-white text-sm font-medium leading-normal"
+            >
+              Saved Jobs
+            </Link>
+          )}
         </div>
         <div className="flex items-center gap-2">
           <Link
@@ -52,22 +67,37 @@ const Header = () => {
           >
             <FaPlus className="size-5" />
           </Link>
-          <Link
-            to="/auth/signup"
-            className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1773cf] text-white text-sm font-bold leading-normal tracking-[0.015em]"
-          >
-            <span className="truncate">Start free trial</span>
-          </Link>
-          <Link
-            to="/auth"
-            className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-[#1773cf] text-sm font-bold leading-normal tracking-[0.015em] border border-solid border-[#1773cf]"
-          >
-            <span className="truncate">Login</span>
-          </Link>
+
+          {isAuthenticated ? (
+            <>
+              <Link
+                to="/dashboard/c"
+                className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-[#1773cf] text-sm font-bold leading-normal tracking-[0.015em] border border-solid border-[#1773cf]"
+              >
+                <span className="truncate">Chat</span>
+              </Link>
+              <User />
+            </>
+          ) : (
+            <>
+              <Link
+                to="/auth/signup"
+                className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#1773cf] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+              >
+                <span className="truncate">Start free trial</span>
+              </Link>
+              <Link
+                to="/auth"
+                className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-[#1773cf] text-sm font-bold leading-normal tracking-[0.015em] border border-solid border-[#1773cf]"
+              >
+                <span className="truncate">Login</span>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </header>
   );
 };
 
-export default Header;
+export default Index;
