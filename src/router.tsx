@@ -8,6 +8,7 @@ import SignupPage from "@/pages/auth/signup";
 import Logout from "./pages/auth/logout";
 import Callback from "@/pages/auth/callback";
 import ResetPasswordPage from "@/pages/auth/reset";
+import ChangePasswordPage from "@/pages/auth/reset/change";
 import AssistantPage from "@/pages/dashboard";
 import Layout from "@/pages";
 
@@ -24,7 +25,8 @@ function Router() {
         <Route path="auth">
           <Route index element={<SigninPage />} />
           <Route path="signup" element={<SignupPage />} />
-          <Route path="reset-password" element={<ResetPasswordPage />} />
+          <Route path="reset" element={<ResetPasswordPage />} />
+          <Route path="reset/:token" element={<ChangePasswordPage />} />
           <Route path="callback" element={<Callback />} />
           <Route path="logout" element={<Logout />} />
           {/* <Route path="callback" element={<AuthCallback />} />
